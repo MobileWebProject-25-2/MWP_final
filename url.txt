@@ -1,2 +1,3 @@
 Python Anywhere: https://ksw090711.pythonanywhere.com
 github: https://github.com/MobileWebProject-25-2/MWP_final
+PPTX: https://docs.google.com/presentation/d/1yL5T9oSv8qrGAAn3Z7YtWudg3BbLDWqUQI1QnapZBW0/edit?usp=sharing
