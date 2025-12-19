@@ -1,3 +1,4 @@
 Python Anywhere: https://ksw090711.pythonanywhere.com
 github: https://github.com/MobileWebProject-25-2/MWP_final
 PPTX: https://docs.google.com/presentation/d/1yL5T9oSv8qrGAAn3Z7YtWudg3BbLDWqUQI1QnapZBW0/edit?usp=sharing
+PPT에서 기능명세표가 계속 짤리는 현상이 발생하여 구글 슬라이드에 올려 따로 봐주시면 감사하겠습니다 교수님
