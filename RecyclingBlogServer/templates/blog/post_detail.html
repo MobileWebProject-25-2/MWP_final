@@ -1,0 +1,95 @@
+<!-- templates/blog/post_detail.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} - 분리수거 가이드</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        .post-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .post-content {
+            padding: 30px;
+        }
+        .category-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .guide-text {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            line-height: 1.8;
+            white-space: pre-line;
+            color: #444;
+        }
+        .meta {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+        .back-btn:hover {
+            background: #5a6fd6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+        {% endif %}
+        <div class="post-content">
+            <span class="category-badge">{{ post.get_category_display }}</span>
+            <h1>{{ post.title }}</h1>
+            <div class="guide-text">{{ post.text }}</div>
+            <div class="meta">
+                <p>📅 등록일: {{ post.published_date|date:"Y년 m월 d일 H시 i분" }}</p>
+                {% if post.author %}
+                <p>👤 작성자: {{ post.author.username }}</p>
+                {% endif %}
+            </div>
+            <a href="{% url 'post_list' %}" class="back-btn">← 목록으로</a>
+        </div>
+    </div>
+</body>
+</html>
